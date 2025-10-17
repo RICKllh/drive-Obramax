@@ -1,0 +1,270 @@
+/* ===========================
+   Estilo inspirado na Obramax
+   Minimalista, limpo e moderno
+=========================== */
+
+/* Variáveis para facilitar manutenção */
+:root {
+  --primary-color: #f58220; /* Cor laranja da Obramax */
+  --secondary-color: #e6741a; /* Tom mais escuro para hover */
+  --text-color: #222;
+  --muted-color: #555;
+  --background-light: #f5f5f5;
+  --border-color: #eee;
+  --font-family: 'Inter', sans-serif; /* Usando a fonte importada no HTML */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--text-color);
+  line-height: 1.6;
+  padding-top: 100px; /* Espaço para o header fixo */
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+  background-color: var(--background-light);
+  border-bottom: 4px solid var(--primary-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: box-shadow 0.3s ease;
+}
+
+header:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  color: var(--muted-color);
+  font-size: 1rem;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===== FORMULÁRIO ===== */
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+input[type="text"] {
+  width: 70%;
+  min-width: 250px;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(245, 130, 32, 0.3);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* ===== RESULTADOS E GRID DE PRODUTOS ===== */
+.results-head {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.results-head h1 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.query-text {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.link-back {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.link-back:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  justify-items: center;
+  align-items: start;
+}
+
+/* Responsividade para .grid-products */
+@media (max-width: 1400px) {
+  .grid-products {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .grid-products {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid-products {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-products {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .grid-products {
+    grid-template-columns: 1fr;
+  }
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: 180px;
+  max-width: 220px;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+}
+
+.product-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+.product-meta {
+  font-size: 0.9rem;
+  color: var(--muted-color);
+  margin-top: 5px;
+}
+
+.btn-primary.small {
+  background-color: var(--primary-color);
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  transition: background 0.3s ease;
+}
+
+.btn-primary.small:hover {
+  background-color: var(--secondary-color);
+}
+
+/* ===== MENSAGEM DE NENHUM RESULTADO ===== */
+.no-results {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--background-light);
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+.no-results p {
+  margin-bottom: 10px;
+}
+
+.muted {
+  color: var(--muted-color);
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  text-align: center;
+  color: var(--muted-color);
+  font-size: 0.9rem;
+  padding: 20px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
