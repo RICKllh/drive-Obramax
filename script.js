@@ -14,6 +14,7 @@ const ordemCategorias = [
   "Climatização e Ventilação",
   "Cozinhas e Áreas de Serviço",
   "EPIs",
+  "Telhas",
   "Ferragens",
   "Ferramentas",
   "Iluminação",
@@ -95,3 +96,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
